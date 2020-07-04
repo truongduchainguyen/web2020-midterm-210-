@@ -4,11 +4,12 @@
 </head>
 
 <body>
-    <table border = "1">
+    <table>
         <tr>
-            <th>Mã Loại</th>
-            <th>Tên Loại</th>
-            <th>Mô tả</th>
+            <th>Mẫ hàng hoá</th>
+            <th>Tên hàng hoá</th>
+            <th></th>
+            <th>Hình</th>
         </tr>
         <?php
         $conn = mysqli_connect("localhost", "root", "", "hanghoa");
@@ -17,7 +18,7 @@
             die("Connection failed:".$conn -> connect_error);
         }
 
-        $sql='select MaLoai, TenLoai, MoTa from loai';
+        $sql='select MaHH, TenHH, DonGia, Hinh from hanghoa';
         $result = $conn -> query($sql);
 
         if($result -> num_rows > 0){
@@ -33,4 +34,4 @@
         $conn -> close();
         ?>
     </table>
-</body>
+</body> 
